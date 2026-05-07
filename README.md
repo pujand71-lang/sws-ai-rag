@@ -1,53 +1,59 @@
-# 🤖 SWS AI: Intelligent Policy Concierge
-> **A High-Performance RAG Chatbot for Seamless Employee Onboarding & Policy Access.**
+# <img src="[https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Robots/Robot.png](https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Robots/Robot.png)" alt="Robot" width="40" height="40" /> SWS AI: Enterprise RAG Intelligence
 
-[![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)](https://fastapi.tiangolo.com/)
-[![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logo=langchain)](https://langchain.com/)
-[![Google Gemini](https://img.shields.io/badge/Google%20Gemini-4285F4?style=for-the-badge&logo=google-gemini&logoColor=white)](https://ai.google.dev/)
-[![Vector DB](https://img.shields.io/badge/ChromaDB-white?style=for-the-badge&logo=google-cloud&logoColor=red)](https://www.trychroma.com/)
+### *Elevating Employee Experience through Retrieval-Augmented Generation*
 
----
-
-## 🌟 Overview
-**SWS AI Chatbot** solves the "Information Silo" problem. Instead of manually digging through 10+ complex HR and Security PDFs, employees can now ask natural language questions and get **grounded, hallucination-free answers** in seconds.
-
-### 🎯 Key Highlights
-- ⚡ **Real-time RAG:** Retrieval-Augmented Generation pipeline.
-- 🛡️ **Zero Hallucination:** Strictly answers from provided company documents.
-- 📂 **Source Attribution:** Every answer cites the specific PDF it came from.
-- 🎨 **Sleek UI:** Minimalist blue-white design using the **Livvic** typography.
+<p align="left">
+  <img src="[https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)" />
+  <img src="[https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)" />
+  <img src="[https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white](https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white)" />
+  <img src="[https://img.shields.io/badge/Google_Gemini-4285F4?style=for-the-badge&logo=google-gemini&logoColor=white](https://img.shields.io/badge/Google_Gemini-4285F4?style=for-the-badge&logo=google-gemini&logoColor=white)" />
+  <img src="[https://img.shields.io/badge/ChromaDB-red?style=for-the-badge&logo=google-cloud&logoColor=white](https://img.shields.io/badge/ChromaDB-red?style=for-the-badge&logo=google-cloud&logoColor=white)" />
+</p>
 
 ---
 
-## 🏗️ System Architecture
-The project follows a modular AI pipeline to ensure scalability and speed.
-
-
-
-1.  **Ingestion:** Extracts text from 10 Policy PDFs.
-2.  **Splitting:** Recursive chunking (500 chars, 50 overlap) for context retention.
-3.  **Embedding:** Transforms text into vectors using Google Gemini `embedding-001`.
-4.  **Vector Store:** ChromaDB manages semantic search.
-5.  **Generation:** Gemini 1.5 Flash synthesizes answers based *only* on top-k retrieved chunks.
+## 🌊 The Problem & The Solution
+Manual policy searching is a productivity killer. **SWS AI Chatbot** acts as a bridge between static corporate PDFs and employee queries. It provides **Grounded Answers**, meaning it only speaks what the documents know—eliminating the risk of AI "hallucinations."
 
 ---
 
-## 🛠️ Tech Stack
-| Layer | Technology |
+## 🚀 Key Features
+
+| Feature | Description |
 | :--- | :--- |
-| **Backend** | FastAPI (Python) |
-| **Orchestration** | LangChain |
-| **LLM** | Google Gemini 1.5 Flash |
-| **Embeddings** | Google Generative AI |
-| **Database** | ChromaDB (Vector Store) |
-| **Frontend** | Vanilla JS, HTML5, CSS3 (Livvic Font) |
+| 🔍 **Semantic Search** | Uses vector embeddings to find meaning, not just keywords. |
+| 🛡️ **Zero Hallucination** | Hard-coded system constraints to ensure 100% factual accuracy. |
+| 📚 **Source Tracking** | Transparently displays which PDFs were used for the answer. |
+| ⚡ **Async Processing** | Built on FastAPI for lightning-fast concurrent requests. |
+| 🎨 **Modern UI** | A clean, executive blue-white interface optimized for readability. |
 
 ---
 
-## 🚀 Getting Started
+## 🏗️ Deep-Dive Architecture
 
-### 1️⃣ Clone & Install
+The system is built on a high-performance RAG (Retrieval-Augmented Generation) pipeline:
+
+### 1. The Ingestion Engine 📥
+- **Extraction:** Utilizes `PyMuPDF` to parse 10 core company PDFs.
+- **Chunking:** Implements `RecursiveCharacterTextSplitter`.
+  - **Chunk Size:** 500 characters.
+  - **Overlap:** 50 characters (preserves context between chunks).
+
+### 2. The Neural Brain 🧠
+- **Embeddings:** `models/embedding-001` by Google DeepMind.
+- **Vector Store:** `ChromaDB` (Self-hosted/Local) for ultra-low latency retrieval.
+- **LLM:** `Gemini 1.5 Flash` (The perfect balance of speed and intelligence).
+
+### 3. The Retrieval Logic ⚙️
+- **K-Value:** Fetches top-5 most relevant document segments.
+- **System Prompting:** A strict "Context-Only" instruction set ensures zero data leakage from outside sources.
+
+---
+
+## 🛠️ Setup & Installation
+
+### <img src="[https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Laptop.png](https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Laptop.png)" alt="Laptop" width="25" height="25" /> Step 1: Environment Setup
 ```bash
-git clone [https://github.com/your-username/sws-ai-rag-chatbot.git](https://github.com/your-username/sws-ai-rag-chatbot.git)
-cd sws-ai-rag-chatbot
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
