@@ -1,0 +1,6 @@
+{
+  "name": "SWS AI RAG Chatbot",
+  "description": "A RAG-powered chatbot for SWS AI company policies using Gemini and ChromaDB.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
