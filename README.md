@@ -1,41 +1,53 @@
-# SWS AI RAG Chatbot
+# 🤖 SWS AI: Intelligent Policy Concierge
+> **A High-Performance RAG Chatbot for Seamless Employee Onboarding & Policy Access.**
 
-Technical assessment project for SWS AI.
+[![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)](https://fastapi.tiangolo.com/)
+[![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logo=langchain)](https://langchain.com/)
+[![Google Gemini](https://img.shields.io/badge/Google%20Gemini-4285F4?style=for-the-badge&logo=google-gemini&logoColor=white)](https://ai.google.dev/)
+[![Vector DB](https://img.shields.io/badge/ChromaDB-white?style=for-the-badge&logo=google-cloud&logoColor=red)](https://www.trychroma.com/)
 
-## Architecture
-- **Backend**: FastAPI (Python)
-- **RAG Framework**: LangChain
-- **Vector DB**: ChromaDB (Local)
-- **Embeddings**: Google Gemini (`models/embedding-001`)
-- **LLM**: Google Gemini 1.5 Flash
-- **Frontend**: HTML5/Vanilla JS with Livvic font
+---
 
-## Setup Instructions
+## 🌟 Overview
+**SWS AI Chatbot** solves the "Information Silo" problem. Instead of manually digging through 10+ complex HR and Security PDFs, employees can now ask natural language questions and get **grounded, hallucination-free answers** in seconds.
 
-1. **Install Dependencies**:
-   ```bash
-   pip install -r requirements.txt
-   ```
+### 🎯 Key Highlights
+- ⚡ **Real-time RAG:** Retrieval-Augmented Generation pipeline.
+- 🛡️ **Zero Hallucination:** Strictly answers from provided company documents.
+- 📂 **Source Attribution:** Every answer cites the specific PDF it came from.
+- 🎨 **Sleek UI:** Minimalist blue-white design using the **Livvic** typography.
 
-2. **Environment Variables**:
-   Create a `.env` file and add your Gemini API Key:
-   ```env
-   GEMINI_API_KEY=your_api_key_here
-   ```
+---
 
-3. **Ingest Documents**:
-   Place your 10 company PDFs in the `/data` folder (they must end in `.pdf`).
-   The server will automatically process them on startup.
+## 🏗️ System Architecture
+The project follows a modular AI pipeline to ensure scalability and speed.
 
-4. **Run the Application**:
-   ```bash
-   npm run dev
-   ```
 
-5. **Open Frontend**:
-   Open `index.html` in your browser.
 
-## Logic Details
-- **Chunking**: RecursiveCharacterTextSplitter (Size 500, Overlap 50).
-- **Retrieval**: Top-5 most relevant chunks using semantic similarity.
-- **Hallucination Control**: Custom system prompt forcing context-only answers.
+1.  **Ingestion:** Extracts text from 10 Policy PDFs.
+2.  **Splitting:** Recursive chunking (500 chars, 50 overlap) for context retention.
+3.  **Embedding:** Transforms text into vectors using Google Gemini `embedding-001`.
+4.  **Vector Store:** ChromaDB manages semantic search.
+5.  **Generation:** Gemini 1.5 Flash synthesizes answers based *only* on top-k retrieved chunks.
+
+---
+
+## 🛠️ Tech Stack
+| Layer | Technology |
+| :--- | :--- |
+| **Backend** | FastAPI (Python) |
+| **Orchestration** | LangChain |
+| **LLM** | Google Gemini 1.5 Flash |
+| **Embeddings** | Google Generative AI |
+| **Database** | ChromaDB (Vector Store) |
+| **Frontend** | Vanilla JS, HTML5, CSS3 (Livvic Font) |
+
+---
+
+## 🚀 Getting Started
+
+### 1️⃣ Clone & Install
+```bash
+git clone [https://github.com/your-username/sws-ai-rag-chatbot.git](https://github.com/your-username/sws-ai-rag-chatbot.git)
+cd sws-ai-rag-chatbot
+pip install -r requirements.txt
